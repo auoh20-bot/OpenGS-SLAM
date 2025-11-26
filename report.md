@@ -95,11 +95,13 @@ python eval_nvs.py \
 
 # 测试运行结果
 ## 跟踪精度结果
+
 | 片段Id | 	NICER-SLAM | 	GlORIE-SLAM	| MonoGS | OpenGS-SLAM（Ours）|
-| --- | --- | --- |  
+| --- | --- | --- |  --- | --- | 
 | 100613 | 19.39m | 0.302m | 6.953m | 0.324m | 
 | 13476 | 8.18m | 0.569m | 3.366m | 0.422m |  
 | 平均值 | 19.59m | 0.536m |8.529m | 0.839m |   
+
  ![Image text](https://github.com/auoh20-bot/OpenGS-SLAM/blob/main/622d5aabee5d299e86f0685ea2c3735.png?raw=true)
  ![Image text](https://github.com/auoh20-bot/OpenGS-SLAM/blob/main/69b4c38aebb66c88024ccd83d4471e2.png?raw=true)
 ### 体积表示
