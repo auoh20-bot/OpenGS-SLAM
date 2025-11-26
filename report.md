@@ -1,9 +1,3 @@
-[2412.12392v2.pdf](https://leedong25.yuque.com/attachments/yuque/0/2025/pdf/45861457/1760956780764-50e38c08-829b-4468-b52f-fa196fa6e05b.pdf)_[2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)]_
-
-**GitHub**：[https://github.com/rmurai0610/MASt3R-SLAM?tab=readme-ov-file](https://github.com/rmurai0610/MASt3R-SLAM?tab=readme-ov-file)
-
-**DeepWiki**：[https://deepwiki.com/rmurai0610/MASt3R-SLAM?tab=readme-ov-file](https://deepwiki.com/rmurai0610/MASt3R-SLAM?tab=readme-ov-file)
-
 # 论文内容概述
 <font style="background-color:#FBDE28;">基准模型</font> <font style="background-color:#C1E77E;">模块</font> <font style="background-color:#F8B881;">基准测试</font> <font style="background-color:#F1A2AB;">论文模型</font>
 
