@@ -94,8 +94,14 @@ python eval_nvs.py \
 ```
 
 # 测试运行结果
+## 跟踪精度结果
+| 片段Id | 	NICER-SLAM | 	GlORIE-SLAM	| MonoGS | OpenGS-SLAM（Ours）|
+| --- | --- | --- |  
+| 100613 | 19.39m | 0.302m | 6.953m | 0.324m | 
+| 13476 | 8.18m | 0.569m | 3.366m | 0.422m |  
+| 平均值 | 19.59m | 0.536m |8.529m | 0.839m |   
  ![Image text](https://github.com/auoh20-bot/OpenGS-SLAM/blob/main/622d5aabee5d299e86f0685ea2c3735.png?raw=true)
- ![Image text]()
+ ![Image text](https://github.com/auoh20-bot/OpenGS-SLAM/blob/main/69b4c38aebb66c88024ccd83d4471e2.png?raw=true)
 ### 体积表示
 体积表示已展现出一致重建的潜力，因其几何参数在渲染过程中相互耦合。<u>多种 SLAM 系统采用神经场 [25] 和高斯泼溅 [18] 中的可微分渲染技术，适用于单目和 RGB‐D 相机。然而相较于替代方案，这些方法的实时性能滞后，且需要深度、额外二维先验或缓慢相机运动来约束解。</u>面向通用场景重建的3D先验最早将二维特征融合为三维体素网格，再解码为表面几何 [27, 40]。此类方法假设已知融合位姿，故不适用于联合跟踪与地图构建，且体积表示需消耗大量内存并依赖预定义分辨率。
 
