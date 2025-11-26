@@ -1,7 +1,9 @@
-# 论文内容概述
-<font style="background-color:#FBDE28;">基准模型</font> <font style="background-color:#C1E77E;">模块</font> <font style="background-color:#F8B881;">基准测试</font> <font style="background-color:#F1A2AB;">论文模型</font>
+# 论文研究问题
+现有基于 3D Gaussian Splatting（3DGS）的 SLAM 方法存在显著局限：
+主要面向室内场景，依赖 RGB-D 传感器或预训练深度估计模型，无法直接适用于无界户外场景。
+仅使用 RGB 输入时，面临两大核心挑战：①深度和尺度估计不准确，影响位姿精度和 3DGS 初始化；②户外场景图像重叠有限、视角单一，缺乏有效约束导致训练难以收敛。
 
-## 研究背景与动机
+# 创新点
 视觉同步定位与地图构建（SLAM）是当今机器人学和增强现实产品的基础构建模块。通过精心设计集成的硬件与软件栈，现已能实现鲁棒且准确的视觉SLAM。然而，SLAM 非即插即用算法，因其需要硬件专业知识和校准。<u>对于无额外传感器（如惯性测量单元，IMU）的最小单相机配置，目前尚不存在能同时提供精确位姿与一致稠密地图的野外同步定位与地图构建方案</u>。<font style="color:#DF2A3F;">（研究背景）</font>实现这种可靠的稠密 SLAM 系统将为空间智能开辟新的研究途径。<font style="color:#DF2A3F;">（研究动机）</font>
 
 ## Related Work
