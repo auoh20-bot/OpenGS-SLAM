@@ -6,7 +6,9 @@
 
 ## 创新点
 1.提出首个面向无界户外场景的纯 RGB 输入 3D Gaussian Splatting SLAM 方法（OpenGS-SLAM），无需依赖深度传感器或预训练深度模型。
+
 2.设计点图回归网络（Pointmap Regression Network），并将其与位姿估计、3DGS 渲染整合为端到端可微分管道，实现位姿与场景参数的联合优化，提升跟踪精度和稳定性。
+
 3.提出自适应尺度映射器（Adaptive Scale Mapper）和基于旋转角度的动态学习率调整策略，解决户外场景尺度不一致问题，优化新场景建模效果。
 ## 方法流程图
 
