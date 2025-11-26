@@ -24,8 +24,47 @@
 | (13) | 旋转弧度计算 | 内容 |  
 | (14) | 动态迭代次数调整 | 内容 |  
 # 安装说明
+```python
+# 1. 创建并激活虚拟环境
+conda create -n opengs-slam python=3.9
+conda activate opengs-slam
 
+# 2. 安装PyTorch与CUDA
+conda install pytorch==1.18.0 torchvision==0.19.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 
+# 3. 安装其他依赖
+pip install numpy==1.24.3 scipy==1.10.1 opencv-python==4.8.0.76
+pip install waymo-open-dataset-tf-2-11-0==1.5.1
+pip install matplotlib tensorboard
+
+# 4. 克隆项目仓库（假设开源）
+git clone https://3dagentworld.github.io/opengs-slam/
+cd opengs-slam
+
+# 5. 编译CUDA扩展（高斯光栅化模块）
+cd src/cuda
+python setup.py install
+cd ../../# 1. 创建并激活虚拟环境
+conda create -n opengs-slam python=3.9
+conda activate opengs-slam
+
+# 2. 安装PyTorch与CUDA
+conda install pytorch==1.18.0 torchvision==0.19.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# 3. 安装其他依赖
+pip install numpy==1.24.3 scipy==1.10.1 opencv-python==4.8.0.76
+pip install waymo-open-dataset-tf-2-11-0==1.5.1
+pip install matplotlib tensorboard
+
+# 4. 克隆项目仓库（假设开源）
+git clone https://3dagentworld.github.io/opengs-slam/
+cd opengs-slam
+
+# 5. 编译CUDA扩展（高斯光栅化模块）
+cd src/cuda
+python setup.py install
+cd ../../
+```
 ### 多视图先验
 以 **多视图立体视觉（MVS）**[20, 33, 55] 和**光流** [43] 为代表的多视图先验方法，则专注于从两个或多个视角学习对应关系作为获取几何的手段。
 
