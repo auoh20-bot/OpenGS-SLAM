@@ -65,13 +65,33 @@ cd src/cuda
 python setup.py install
 cd ../../
 ```
-### 多视图先验
-以 **多视图立体视觉（MVS）**[20, 33, 55] 和**光流** [43] 为代表的多视图先验方法，则专注于从两个或多个视角学习对应关系作为获取几何的手段。
+# 运行说明
+## 训练与跟踪
+```python
+# 单片段训练（以片段100613为例）
+python run_slam.py \
+  --config configs/opengs_slam_waymo.yaml \
+  --data_path ./data/waymo_processed/100613 \
+  --output_path ./results/100613 \
+  --mode train \
+  --gpu 0
 
-<u>然而，两者都需要额外信息</u>：MVS 固定位姿以实现对应关系，而光流是运动与几何的耦合观测，受限于前文所述的_退化问 题_。
+# 多片段批量测试
+python run_slam.py \
+  --config configs/opengs_slam_waymo.yaml \
+  --data_path ./data/waymo_processed \
+  --output_path ./results/all_segments \
+  --mode test \
+  --gpu 0
+```
 
-> _退化问题_：尽管多视图先验（如光流）能减少模糊性，但解耦运动与几何仍具挑战——因为像素运动同时取决于外参和相机模型。尽管这些根本原因可能随时间或不同观察者而变化，但 3D 场景在跨视角中保持不变。因此，从图像中求解位姿、相机模型和稠密几何所需的统一先验，应建立在共同坐标系的三维几何空间之上。
->
+## 新视图合成评估
+```python
+python eval_nvs.py \
+  --result_dir ./results/100613 \
+  --metric psnr ssim lpips \
+  --output_eval ./eval_results/100613_nvs.json
+```
 
 ### 体积表示
 体积表示已展现出一致重建的潜力，因其几何参数在渲染过程中相互耦合。<u>多种 SLAM 系统采用神经场 [25] 和高斯泼溅 [18] 中的可微分渲染技术，适用于单目和 RGB‐D 相机。然而相较于替代方案，这些方法的实时性能滞后，且需要深度、额外二维先验或缓慢相机运动来约束解。</u>面向通用场景重建的3D先验最早将二维特征融合为三维体素网格，再解码为表面几何 [27, 40]。此类方法假设已知融合位姿，故不适用于联合跟踪与地图构建，且体积表示需消耗大量内存并依赖预定义分辨率。
